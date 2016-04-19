@@ -8,62 +8,20 @@ function dbUtil_connect(){
     }
     return isset($db);
 }
-function dbUtil_table_exists(&$qh){
+function dbUtil_getAllLocations(&$qh){
     global $db;
-    if(!isset($db)) return false;
-    $q = 'SHOW TABLES LIKE "locations"';
-    $qh[] = $q;
-    $r = mysqli_query($db,$q);
-    return mysqli_num_rows($r) > 0;
-}
-function dbUtil_create_table(&$qh){
-    global $db;
-    if(!isset($db)) return false;
-    $q = 'CREATE TABLE  IF NOT EXISTS person (
-				id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-				firstname VARCHAR(100) NOT NULL,
-				lastname VARCHAR(100) NOT NULL
-	)';
-    $qh[] = $q;
-    return mysqli_query($db,$q);
-}
-function dbUtil_drop_table(&$qh){
-    global $db;
-    if(!isset($db)) return false;
-    $q = 'DROP TABLE person';
-    $qh[] = $q;
-    return mysqli_query($db,$q);
-}
-function dbUtil_get_items(&$qh){
-    global $db;
-    if(!isset($db)) return false;
-    $q = 'SELECT * FROM locations';
-    $qh[] = $q;
-    return mysqli_query($db,$q);
-}
-
-function dbUtil_insert_an_item_from_post(&$qh){
-    global $db;
-    if(!isset($db)) return false;
-    $q = 'INSERT INTO person (firstname,lastname)
-			VALUES ("'.$_POST['firstname'].'",
-					"'.$_POST['lastname'].'")';
-    $qh[] = $q;
-    return mysqli_query($db,$q);
-}
-
-function dbUtil_formatResult(&$qh){
-    if(dbUtil_table_exists()){
-        $r = dbUtil_get_items($qh);
-        $ct = '<table class="table table-striped">'."\n";
-        $ct .= '  <thead><th>id</th><th>First Name</th><th>Last Name</th><thead>'."\n";
-        $ct .= '  <tbody>'."\n";
-        echo json_encode(mysqli_fetch_array($r));
-        $ct .= '  </tbody>'."\n";
-        $ct .= '</table>'."\n";
+    if(!dbUtil_connect()){
+        return false;
     }else{
-        $ct = '<div class="alert alert-danger">Table does not exist</div>'."\n";
+        $sql = "SELECT * FROM locations";
+        $result = mysqli_query($db,$q);
+        $return_result=array();
+        $counter = 0;
+        while($row = mysqli_fetch_array($result)){
+            $return_result[$counter]=array("name" => $row['name'], "description" => $row['description'], "lat" => $row[lat], "lng" => $row['lng']);
+            $counter++;
+        }
+        return json_encode($return_result);
     }
-    return $ct;
 }
 ?>
