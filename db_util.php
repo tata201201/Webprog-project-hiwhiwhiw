@@ -79,7 +79,7 @@ function dbUtil_getUserInfo($user_id){
         if(!is_numeric($user_id)) return false;
         $sql = "SELECT * FROM users WHERE id = $user_id";
         $result = mysqli_query($db,$sql);
-        $row = mysqli_fetch_array($result)
+        $row = mysqli_fetch_array($result);
         $return_result=array("id" => $row['id'], "username" => $row['username'], "name" => $row['name'], "color" => $row['color']);
         return json_encode($return_result);
     }
