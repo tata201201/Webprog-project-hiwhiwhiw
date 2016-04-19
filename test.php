@@ -1,4 +1,5 @@
 <?php
+echo "AAA";
 include('db_util.php');
 print("dbUtil_getAllLocations() : " . dbUtil_getAllLocations() . "<br>");
 print("dbUtil_getAllReviewsByLocation('ABC') : " . dbUtil_getAllReviewsByLocation('ABC') . "<br>");
