@@ -88,5 +88,36 @@ function dbUtil_getUserInfo($user_id){
         return json_encode($return_result);
     }
 }
-
+function dbUtil_changePassword($user_id, $old_password, $new_password){
+    global $db;
+    if(!dbUtil_connect()){
+        return false;
+    }else{
+        if(!is_numeric($user_id)) return false;
+        $sql = "SELECT * FROM users WHERE id = '$user_id' AND password = '$old_password'";
+        $result = mysqli_query($db,$sql);
+        if($result->num_rows == 1){
+            $sql = "UPDATE users SET password = '$new_password' WHERE id = '$user_id'";
+            $result = mysqli_query($db,$sql);
+            return true;
+        }
+        return false;
+    }
+}
+function dbUtil_changeColor($user_id, $new_color){
+    global $db;
+    if(!dbUtil_connect()){
+        return false;
+    }else{
+        if(!is_numeric($user_id)) return false;
+        $sql = "SELECT * FROM users WHERE id = '$user_id'";
+        $result = mysqli_query($db,$sql);
+        if($result->num_rows == 1){
+            $sql = "UPDATE users SET color = '$new_color' WHERE id = '$user_id'";
+            $result = mysqli_query($db,$sql);
+            return true;
+        }
+        return false;
+    }
+}
 ?>
