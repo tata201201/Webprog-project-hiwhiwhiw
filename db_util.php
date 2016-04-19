@@ -52,7 +52,7 @@ function dbUtil_checkLogin($username, $password){
         return false;
     }
 }
-function sbUtil_getAllReviewsByUser($user_id){
+function dbUtil_getAllReviewsByUser($user_id){
     global $db;
     if(!dbUtil_connect()){
         return false;
