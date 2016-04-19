@@ -82,4 +82,5 @@ function dbUtil_getUserInfo($user_id){
         return json_encode($return_result);
     }
 }
+
 ?>
