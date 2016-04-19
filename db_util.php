@@ -11,7 +11,7 @@ function dbUtil_connect(){
 function dbUtil_table_exists(&$qh){
     global $db;
     if(!isset($db)) return false;
-    $q = 'SHOW TABLES LIKE "person"';
+    $q = 'SHOW TABLES LIKE "locations"';
     $qh[] = $q;
     $r = mysqli_query($db,$q);
     return mysqli_num_rows($r) > 0;
