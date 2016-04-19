@@ -1,7 +1,5 @@
 <?php
-echo "BBB";
 include("db_util.php");
-echo "AAA";
 print("dbUtil_getAllLocations() : " . dbUtil_getAllLocations() . "<br>");
 print("dbUtil_getAllReviewsByLocation('ABC') : " . dbUtil_getAllReviewsByLocation('ABC') . "<br>");
 print("dbUtil_getAllReviewsByLocation(1) : " . dbUtil_getAllReviewsByLocation(1) . "<br>");
