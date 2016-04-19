@@ -1,0 +1,18 @@
+.mdl-layout__header-row{
+	padding-left: 15px;
+}
+.disabled {
+   pointer-events: none;
+   cursor: default;
+}
+.loginfield {
+	text-align: center;
+	margin: 0 auto;
+	padding: 15vh 0px 0px 0px;
+}
+.register-button {
+	margin: 2vw 2vw 0 0;
+}
+.login-button {
+	margin: 2vw 0 0 0;
+}
