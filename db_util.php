@@ -58,7 +58,7 @@ function dbUtil_formatResult(&$qh){
         $ct = '<table class="table table-striped">'."\n";
         $ct .= '  <thead><th>id</th><th>First Name</th><th>Last Name</th><thead>'."\n";
         $ct .= '  <tbody>'."\n";
-        echo json_encode($r);
+        echo json_encode(mysqli_fetch_array($r));
         $ct .= '  </tbody>'."\n";
         $ct .= '</table>'."\n";
     }else{
