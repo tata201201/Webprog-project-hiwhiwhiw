@@ -42,16 +42,16 @@ function dbUtil_getAllReviewsByLocation($location_id){
     }
 }
 function dbUtil_checkLogin($username, $password){
-    echo "AAA";
+    //echo "AAA";
     global $db;
     if(!dbUtil_connect()){
         return false;
     }else{
-        echo "BBB";
+        //echo "BBB";
         $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
         $result = mysqli_query($db,$sql);
         if($result->num_rows == 1){
-            echo "CCC";
+            //echo "CCC";
             $row = mysqli_fetch_array($result);
             return $row['id'];
         }
