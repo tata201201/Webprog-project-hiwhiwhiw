@@ -29,7 +29,7 @@ function dbUtil_getAllPhotosFromReview($review_id){
     if(!dbUtil_connect()){
         return false;
     }else{
-        if(!is_numeric($location_id)) return false;
+        if(!is_numeric($review_id)) return false;
         $sql = "SELECT * FROM photos WHERE review_id = '$review_id'";
         $result = mysqli_query($db,$sql);
         $return_result=array();
