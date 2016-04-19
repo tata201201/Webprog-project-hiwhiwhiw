@@ -24,6 +24,23 @@ function dbUtil_getAllLocations(){
         return json_encode($return_result);
     }
 }
+function dbUtil_getAllPhotosFromReview($review_id){
+    global $db;
+    if(!dbUtil_connect()){
+        return false;
+    }else{
+        if(!is_numeric($location_id)) return false;
+        $sql = "SELECT * FROM photos WHERE review_id = '$review_id'";
+        $result = mysqli_query($db,$sql);
+        $return_result=array();
+        $counter = 0;
+        while($row = mysqli_fetch_array($result)){
+            $return_result[$counter]=array("id" => $row['id'], "review_id" => $row['review_id'], "directory" => $row['directory'], "caption" => $row['caption']);
+            $counter++;
+        }
+        return json_encode($return_result);
+    }
+}
 function dbUtil_getAllReviewsByLocation($location_id){
     global $db;
     if(!dbUtil_connect()){
@@ -35,7 +52,7 @@ function dbUtil_getAllReviewsByLocation($location_id){
         $return_result=array();
         $counter = 0;
         while($row = mysqli_fetch_array($result)){
-            $return_result[$counter]=array("id" => $row['id'], "user_id" => $row['user_id'], "location_id" => $row['location_id'], "star" => $row['star'], "description" => $row['description']);
+            $return_result[$counter]=array("id" => $row['id'], "user_id" => $row['user_id'], "location_id" => $row['location_id'], "star" => $row['star'], "description" => $row['description'], "photos" => dbUtil_getAllPhotosFromReview($row['id']));
             $counter++;
         }
         return json_encode($return_result);
@@ -69,7 +86,7 @@ function dbUtil_getAllReviewsByUser($user_id){
         $return_result=array();
         $counter = 0;
         while($row = mysqli_fetch_array($result)){
-            $return_result[$counter]=array("id" => $row['id'], "user_id" => $row['user_id'], "location_id" => $row['location_id'], "star" => $row['star'], "description" => $row['description']);
+            $return_result[$counter]=array("id" => $row['id'], "user_id" => $row['user_id'], "location_id" => $row['location_id'], "star" => $row['star'], "description" => $row['description'], "photos" => dbUtil_getAllPhotosFromReview($row['id']));
             $counter++;
         }
         return json_encode($return_result);
