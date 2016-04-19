@@ -46,7 +46,7 @@ function dbUtil_checkLogin($username, $password){
     global $db;
     if(!dbUtil_connect()){
         return false;
-    }else
+    }else{
         echo "BBB";
         $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
         $result = mysqli_query($db,$sql);
