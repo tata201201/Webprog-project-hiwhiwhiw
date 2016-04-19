@@ -38,7 +38,7 @@ function dbUtil_getAllPhotosFromReview($review_id){
             $return_result[$counter]=array("id" => $row['id'], "review_id" => $row['review_id'], "directory" => $row['directory'], "caption" => $row['caption']);
             $counter++;
         }
-        return json_encode($return_result);
+        return $return_result;
     }
 }
 function dbUtil_getAllReviewsByLocation($location_id){
