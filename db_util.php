@@ -14,7 +14,7 @@ function dbUtil_getAllLocations(&$qh){
         return false;
     }else{
         $sql = "SELECT * FROM locations";
-        $result = mysqli_query($db,$q);
+        $result = mysqli_query($db,$sql);
         $return_result=array();
         $counter = 0;
         while($row = mysqli_fetch_array($result)){
