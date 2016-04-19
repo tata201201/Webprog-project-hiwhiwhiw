@@ -11,6 +11,7 @@ if(isset($_GET)){
             }
         }else if($cmd == "check_login"){
             if(isset($_REQUEST['username']) && isset($_REQUEST['password'])){
+                echo "[".$_REQUEST['username']."][".$_REQUEST['password']."]";
                 print dbUtil_checkLogin($_REQUEST['username'],$_REQUEST['password']);
             }
         }else if($cmd == "get_all_reviews_by_user"){
