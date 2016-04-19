@@ -24,7 +24,7 @@ function dbUtil_getAllLocations(){
         return json_encode($return_result);
     }
 }
-function dbUtil_getAllReviews($location_id){
+function dbUtil_getAllReviewsByLocation($location_id){
     global $db;
     if(!dbUtil_connect()){
         return false;
@@ -66,6 +66,19 @@ function sbUtil_getAllReviewsByUser($user_id){
             $return_result[$counter]=array("id" => $row['id'], "user_id" => $row['user_id'], "location_id" => $row['location_id'], "star" => $row['star'], "description" => $row['description']);
             $counter++;
         }
+        return json_encode($return_result);
+    }
+}
+function dbUtil_getUserInfo($user_id){
+    global $db;
+    if(!dbUtil_connect()){
+        return false;
+    }else{
+        if(!is_numeric($user_id)) return false;
+        $sql = "SELECT * FROM users WHERE user_id = '$user_id'";
+        $result = mysqli_query($db,$sql);
+        $row = mysqli_fetch_array($result)
+        $return_result=array("id" => $row['id'], "username" => $row['username'], "name" => $row['name'], "color" => $row['color']);
         return json_encode($return_result);
     }
 }
