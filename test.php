@@ -1,6 +1,11 @@
 <?php
 echo "AAA";
 include('db_util.php');
+if(!dbUtil_connect()){
+    print '<div class="alert alert-danger">Cannot connect to the Database</div>';
+}else{
+    print "OK";
+}
 print("dbUtil_getAllLocations() : " . dbUtil_getAllLocations() . "<br>");
 print("dbUtil_getAllReviewsByLocation('ABC') : " . dbUtil_getAllReviewsByLocation('ABC') . "<br>");
 print("dbUtil_getAllReviewsByLocation(1) : " . dbUtil_getAllReviewsByLocation(1) . "<br>");
