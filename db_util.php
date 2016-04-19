@@ -41,4 +41,15 @@ function dbUtil_getAllReviews($location_id){
         return json_encode($return_result);
     }
 }
+function dbUtil_checkLogin($username, $password){
+    global $db;
+    if(!dbUtil_connect()){
+        return false;
+    }else{
+        $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+        $result = mysqli_query($db,$sql);
+        if($result->num_rows == 1) return true;
+        return false;
+    }
+}
 ?>
