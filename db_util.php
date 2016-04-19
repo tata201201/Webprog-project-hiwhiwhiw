@@ -104,4 +104,20 @@ function dbUtil_changePassword($user_id, $old_password, $new_password){
         return false;
     }
 }
+function dbUtil_changeColor($user_id, $new_color){
+    global $db;
+    if(!dbUtil_connect()){
+        return false;
+    }else{
+        if(!is_numeric($user_id)) return false;
+        $sql = "SELECT * FROM users WHERE id = '$user_id'";
+        $result = mysqli_query($db,$sql);
+        if($result->num_rows == 1){
+            $sql = "UPDATE users SET color = '$new_color' WHERE id = '$user_id'";
+            $result = mysqli_query($db,$sql);
+            return true;
+        }
+        return false;
+    }
+}
 ?>
