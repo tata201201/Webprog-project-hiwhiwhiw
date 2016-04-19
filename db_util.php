@@ -1,12 +1,9 @@
 <?php
-ini_set('display_errors','on');
 $db = null;
 function dbUtil_connect(){
     global $db;
-    echo "COME IN";
     $db = mysqli_connect("ap-cdbr-azure-southeast-b.cloudapp.net","bad7a8813d5b86","0a44f575","hiwhiwhiw");
     if(mysqli_connect_errno($db)){
-        echo "X"
         $db = null;
     }
     return isset($db);
