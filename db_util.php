@@ -52,4 +52,21 @@ function dbUtil_checkLogin($username, $password){
         return false;
     }
 }
+function sbUtil_getAllReviewsByUser($user_id){
+    global $db;
+    if(!dbUtil_connect()){
+        return false;
+    }else{
+        if(!is_numeric($user_id)) return false;
+        $sql = "SELECT * FROM reviews WHERE user_id = '$user_id'";
+        $result = mysqli_query($db,$sql);
+        $return_result=array();
+        $counter = 0;
+        while($row = mysqli_fetch_array($result)){
+            $return_result[$counter]=array("id" => $row['id'], "user_id" => $row['user_id'], "location_id" => $row['location_id'], "star" => $row['star'], "description" => $row['description']);
+            $counter++;
+        }
+        return json_encode($return_result);
+    }
+}
 ?>
