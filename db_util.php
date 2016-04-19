@@ -30,7 +30,7 @@ function dbUtil_getAllReviewsByLocation($location_id){
         return false;
     }else{
         if(!is_numeric($location_id)) return false;
-        $sql = "SELECT * FROM reviews WHERE location_id = '$location_id'";
+        $sql = "SELECT * FROM reviews WHERE location_id = $location_id";
         $result = mysqli_query($db,$sql);
         $return_result=array();
         $counter = 0;
@@ -58,7 +58,7 @@ function sbUtil_getAllReviewsByUser($user_id){
         return false;
     }else{
         if(!is_numeric($user_id)) return false;
-        $sql = "SELECT * FROM reviews WHERE user_id = '$user_id'";
+        $sql = "SELECT * FROM reviews WHERE user_id = $user_id";
         $result = mysqli_query($db,$sql);
         $return_result=array();
         $counter = 0;
@@ -75,7 +75,7 @@ function dbUtil_getUserInfo($user_id){
         return false;
     }else{
         if(!is_numeric($user_id)) return false;
-        $sql = "SELECT * FROM users WHERE user_id = '$user_id'";
+        $sql = "SELECT * FROM users WHERE id = $user_id";
         $result = mysqli_query($db,$sql);
         $row = mysqli_fetch_array($result)
         $return_result=array("id" => $row['id'], "username" => $row['username'], "name" => $row['name'], "color" => $row['color']);
