@@ -71,6 +71,7 @@ function dbUtil_getAllReviewsByUser($user_id){
         return json_encode($return_result);
     }
 }
+/*
 function dbUtil_getUserInfo($user_id){
     global $db;
     if(!dbUtil_connect()){
@@ -84,4 +85,5 @@ function dbUtil_getUserInfo($user_id){
         return json_encode($return_result);
     }
 }
+*/
 ?>
