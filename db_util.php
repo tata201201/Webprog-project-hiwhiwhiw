@@ -48,7 +48,7 @@ function dbUtil_checkLogin($username, $password){
     }else{
         $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
         $result = mysqli_query($db,$sql);
-        if($result->num_rows == 1) return true;
+        if($result->num_rows == 1) return $result->fetch_assoc()->id;
         return false;
     }
 }
