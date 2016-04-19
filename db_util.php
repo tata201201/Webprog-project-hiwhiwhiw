@@ -37,7 +37,7 @@ function dbUtil_drop_table(&$qh){
 function dbUtil_get_items(&$qh){
     global $db;
     if(!isset($db)) return false;
-    $q = 'SELECT * FROM person';
+    $q = 'SELECT * FROM locations';
     $qh[] = $q;
     return mysqli_query($db,$q);
 }
@@ -54,10 +54,10 @@ function dbUtil_insert_an_item_from_post(&$qh){
 
 function dbUtil_formatResult(&$qh){
     if(dbUtil_table_exists()){
+        $r = dbUtil_get_items($qh);
         $ct = '<table class="table table-striped">'."\n";
         $ct .= '  <thead><th>id</th><th>First Name</th><th>Last Name</th><thead>'."\n";
         $ct .= '  <tbody>'."\n";
-        $r = dbUtil_get_items($qh);
         echo json_encode($r);
         $ct .= '  </tbody>'."\n";
         $ct .= '</table>'."\n";
