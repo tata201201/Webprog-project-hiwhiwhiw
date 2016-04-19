@@ -21,7 +21,6 @@ function dbUtil_getAllLocations(&$qh){
             $return_result[$counter]=array("name" => $row['name'], "description" => $row['description'], "lat" => $row[lat], "lng" => $row['lng']);
             $counter++;
         }
-        echo $counter;
         return json_encode($return_result);
     }
 }
