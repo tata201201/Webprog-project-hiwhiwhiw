@@ -58,14 +58,7 @@ function dbUtil_formatResult(&$qh){
         $ct .= '  <thead><th>id</th><th>First Name</th><th>Last Name</th><thead>'."\n";
         $ct .= '  <tbody>'."\n";
         $r = dbUtil_get_items($qh);
-
-        while($row = mysqli_fetch_array($r)){
-            $ct .= '    <tr>'."\n";
-            $ct .= '      <td>'.$row['id'].'</td>'."\n";
-            $ct .= '      <td>'.$row['firstname'].'</td>'."\n";
-            $ct .= '      <td>'.$row['lastname'].'</td>'."\n";
-            $ct .= '    </tr>'."\n";
-        }
+        echo json_encode($r);
         $ct .= '  </tbody>'."\n";
         $ct .= '</table>'."\n";
     }else{
