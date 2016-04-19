@@ -16,3 +16,6 @@
 .login-button {
 	margin: 2vw 0 0 0;
 }
+#profile-username {
+	color: red;
+}
