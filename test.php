@@ -20,4 +20,8 @@ print("dbUtil_changeColor(1,'blue') : " . dbUtil_changeColor(1,'blue') . "<br>")
 print("dbUtil_getUserInfo(1) : " . dbUtil_getUserInfo(1) . "<br>");
 print("dbUtil_changeColor(1,'red') : " . dbUtil_changeColor(1,'red') . "<br>");
 print("dbUtil_getUserInfo(1) : " . dbUtil_getUserInfo(1) . "<br>");
+$insertResult = dbUtil_addLocation('locA',3.14,5.14,'descA');
+print("dbUtil_addLocation('locA',3.14,5.14,'descA') : " . $insertResult . "<br>");
+print("dbUtil_deleteLocation($insertResult) : " . dbUtil_deleteLocation($insertResult) . "<br>");
+
 ?>
