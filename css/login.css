@@ -210,6 +210,6 @@ button.red, .input-button.red{
 	margin-top: 1vw;
 	margin-bottom: 2vw;
 }
-.error {
+.error, .colorerror {
 	color: red;
 }

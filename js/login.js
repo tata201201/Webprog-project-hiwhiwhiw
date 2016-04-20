@@ -70,12 +70,20 @@ $(document).ready(function()
 		else {
 			$(".error").removeAttr("style");
 			$(".error").html("Password confirmation doesn't match Password.");
+			$(".passwordfield > input").val('');
 		}
 	});
 
 	//change color
 	$(".changecolor-button").click(function() {
 		console.log("changecolor");
+		if( $("#color").val() ) {
+			changeColor( $("#color").val() );
+		}
+		else {
+			$(".colorerror").removeAttr("style");
+			$(".colorerror").html("Color is not in correct format.");
+		}
 	});
 });
 
@@ -165,11 +173,39 @@ function changePassword(oldpassword, renewpassword) {
 		$(".error").removeAttr("style");
 		$(".error").css("color", "#76EEC6");
 		$(".error").html("Change password success.");
+		$(".passwordfield > input").val('');
 	}).fail(function() {
 		console.log("false");
 		$(".error").removeAttr("style");
 		$(".error").css("color", "red");
 		$(".error").html("Password is not correct.");
+		$(".passwordfield > input").val('');
 
+	});
+}
+
+function changeColor(color) {
+	$.ajax
+	({
+		url: "../command_request.php?command=change_color",
+		type: "post",
+		data: 
+		{
+			'user_id': userid,
+			'color': color
+		},
+		dataType: "json"
+	}).done(function(data) {
+		usercolor = color;
+		$(".colorerror").removeAttr("style");
+		$(".colorerror").css("color", "#76EEC6");
+		$(".colorerror").html("Change color success.");
+		$(".layout__header").css("background-color", usercolor);
+    	$("#profile-username").css("color", usercolor);
+	}).fail(function() {
+		console.log("false");
+		$(".colorerror").removeAttr("style");
+		$(".colorerror").css("color", "red");
+		$(".colorerror").html("Color is not in correct format.");
 	});
 }
