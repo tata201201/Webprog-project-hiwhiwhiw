@@ -66,5 +66,6 @@ delete_location | POST ( location_id ) | RETURN TRUE (done) or FALSE (fail)
 edit_location | POST ( location_id , name , lat , lng , description ) | RETURN TRUE (done) or FALSE (fail)
 add_review | POST ( user_id , location_id , star , description ) | RETURN ID (done) or FALSE (fail)
 delete_review | POST ( review_id ) | RETURN TRUE (done) or FALSE (fail)
+edit_review | POST ( review_id , user_id , location_id , star , description ) | RETURN TRUE (done) or FALSE (fail)
  */
 ?>
