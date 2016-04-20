@@ -1,37 +1,42 @@
 <div class="profilefield">
 	<h1 id="profile-username">profile</h1>
-  <form class="go-up" action="#">
-    <div>
-      <div class="textfield">
-        <input class="input" type="password" id="oldpassword" name="oldpassword" required>
-        <label for="oldpassword">old password</label>
+  <div class="edit-profile-form">
+    <form class="go-up col-xs-6" method="post" action="#">
+      <div class="errormsg">
+        <p class="error" style="display: none;">ERROR</p> 
       </div>
-    </div>
-    <div>
-      <div class="textfield">
-        <input class="input" type="password" id="newpassword" name="newpassword" required>
-        <label for="newpassword">new password</label>
+      <div>
+        <div class="textfield">
+          <input class="input" type="password" id="oldpassword" name="oldpassword" required>
+          <label for="oldpassword">old password</label>
+        </div>
       </div>
-    </div>
-    <div>
-      <div class="textfield">
-        <input class="input" type="password" id="renewpassword" name="renewpassword" required>
-        <label for="renewpassword">re-type new password</label>
+      <div>
+        <div class="textfield">
+          <input class="input" type="password" id="newpassword" name="newpassword" required>
+          <label for="newpassword">new password</label>
+        </div>
       </div>
-    </div>
-    <button class="red changepassword-button">
-      Change Password
-    </button>
-  </form>  
-  <form class="go-up" action="#">
-    <div>
-      <div class="textfield">
-        <input class="input" type="text" pattern="^#[0-9a-f]{3,6}$" id="color" name="color" required>
-        <label for="color">type color in #RRBBGG format</label>
+      <div>
+        <div class="textfield">
+          <input class="input" type="password" id="renewpassword" name="renewpassword" required>
+          <label for="renewpassword">re-type new password</label>
+        </div>
       </div>
-    </div>
-    <button class="blue changecolor-button">
-      Change Color
-    </button>
-  </form>
+      <div class="profile-input-button-div">
+        <input type="button" name="changepassword" id="changepassword" value="Change Password" class="changepassword-button input-button red">
+      </div>
+    </form>  
+    <form class="go-up  col-xs-6" method="post" action="#">
+      <div>
+        <div class="textfield">
+          <input class="input" type="text" id="color" name="color" required>
+          <label for="color">type color in #RRBBGG format</label>
+        </div>
+      </div>
+      <div class="profile-input-button-div"></div>
+        <input type="button" name="changecolor" id="changecolor" value="Change Color" class="changecolor-button input-button blue">
+      </div>
+    </form>
+  </div>  
 </div>

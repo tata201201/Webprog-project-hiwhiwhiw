@@ -65,8 +65,8 @@ h3 {
 .tab {
 	text-align: center;
 }
-.tab.is-active {
-    border-style: solid;
+.tab.is-active.selected {
+  border-style: solid;
 	border-width: 0 0 5px 0;
 	border-color: rgb(255, 64, 129);
 }
@@ -91,22 +91,13 @@ a:hover {
 	z-index: 1;
 	-webkit-overflow-scrolling: touch;
 }
-.tab-pabel {
+.tab-panel {
 	display: block;
 }
-.loginfield, .profilefield {
+.loginfield {
 	text-align: center;
 	margin: 0 auto;
 	padding: 15vh 0px 0px 0px;
-}
-.register-button {
-	margin: 2vw 2vw 0 0;
-}
-.login-button {
-	margin: 2vw 0 0 0;
-}
-#profile-username {
-	color: red;
 }
 .textfield {
 	position: relative;
@@ -167,37 +158,58 @@ form input:valid + label {
   font-weight: 400;
   color: rgb(63, 81, 181);
 }
-button {
-    background: 0 0;
-    border: none;
-    border-radius: 2px;
-    color: #000;
-    position: relative;
-    height: 36px;
-    margin: 0;
-    min-width: 64px;
-    padding: 0 16px;
-    display: inline-block;
-    font-family: "Roboto","Helvetica","Arial",sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0;
-    overflow: hidden;
-    will-change: box-shadow;
-    transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
-    outline: none;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
-    line-height: 36px;
-    vertical-align: middle;
+.register-button {
+	margin-right: 2vw;
 }
-button.blue {
+button, .input-button {
+  background: 0 0;
+  border: none;
+  border-radius: 2px;
+  color: #000;
+  position: relative;
+  height: 36px;
+  min-width: 64px;
+  padding: 0 16px;
+  display: inline-block;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  overflow: hidden;
+  will-change: box-shadow;
+  transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  line-height: 36px;
+  vertical-align: middle;
+}
+.login-input-button-div > .input-button {
+	margin-top: 2vw;
+}
+button.blue, .input-button.blue {
 	background: rgb(63,81,181);
 	color: rgb(255,255,255);
 }
-button.red {
+button.red, .input-button.red{
     color: rgb(255,255,255);
     background-color: rgb(255,64,129);
+}
+
+.profilefield {
+	text-align: center;
+	margin: 0 auto;
+	padding: 10vh 0px 0px 0px;
+}
+.edit-profile-form {
+	margin-top: 2vw;
+}
+.profile-input-button-div > .input-button {
+	margin-top: 1vw;
+	margin-bottom: 2vw;
+}
+.error {
+	color: red;
 }
