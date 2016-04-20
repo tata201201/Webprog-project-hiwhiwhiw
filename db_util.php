@@ -178,7 +178,6 @@ function dbUtil_editLocation($location_id, $name, $lat, $lng, $description){
         $sql = "SELECT * FROM locations WHERE id = '$location_id' AND name = '$name' AND lat = '$lat' AND lng = '$lng' AND description = '$description'";
         $result = mysqli_query($db,$sql);
         if($result->num_rows == 1){
-            $row = mysqli_fetch_array($result);
             return true;
         }
         return false;
@@ -210,6 +209,21 @@ function dbUtil_deleteReview($review_id){
         $sql = "SELECT * FROM reviews WHERE id = '$review_id' ";
         $result = mysqli_query($db,$sql);
         if($result->num_rows == 0){
+            return true;
+        }
+        return false;
+    }
+}
+function dbUtil_editReview($review_id, $user_id, $location_id, $star, $description){
+    global $db;
+    if(!dbUtil_connect()){
+        return false;
+    }else{
+        $sql = "UPDATE reviews SET user_id = '$user_id', location_id = '$location_id', star = '$star',description = '$description' WHERE id = '$review_id' ";
+        $result = mysqli_query($db,$sql);
+        $sql = "SELECT * FROM reviews WHERE id = '$review_id' AND user_id = '$user_id' AND location_id = '$location_id' AND star = '$star' AND description = '$description'";
+        $result = mysqli_query($db,$sql);
+        if($result->num_rows == 1){
             return true;
         }
         return false;

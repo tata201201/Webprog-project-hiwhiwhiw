@@ -29,6 +29,10 @@ print("dbUtil_deleteLocation($insertResult) : " . dbUtil_deleteLocation($insertR
 print("dbUtil_getAllLocations() : " . dbUtil_getAllLocations() . "<br>");
 $insertResult = dbUtil_addReview(1,1,5.14,'descA');
 print("dbUtil_addReview(1,1,5.14,'descA') : " . $insertResult . "<br>");
+print("dbUtil_getAllReviewsByLocation(1) : " . dbUtil_getAllReviewsByLocation(1) . "<br>");
+print("dbUtil_editReview($insertResult,1,1,9.14,'descAA') : " . dbUtil_editReview($insertResult,1,1,9.14,'descAA') . "<br>");
+print("dbUtil_getAllReviewsByLocation(1) : " . dbUtil_getAllReviewsByLocation(1) . "<br>");
 print("dbUtil_deleteReview($insertResult) : " . dbUtil_deleteReview($insertResult) . "<br>");
+print("dbUtil_getAllReviewsByLocation(1) : " . dbUtil_getAllReviewsByLocation(1) . "<br>");
 
 ?>
