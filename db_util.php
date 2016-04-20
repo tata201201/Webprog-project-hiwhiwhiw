@@ -168,6 +168,22 @@ function dbUtil_deleteLocation($location_id){
         return false;
     }
 }
+function dbUtil_editLocation($location_id, $name, $lat, $lng, $description){
+    global $db;
+    if(!dbUtil_connect()){
+        return false;
+    }else{
+        $sql = "UPDATE locations SET name = '$name', lat = '$lat', lng = '$lng', description = '$description' WHERE id = '$location_id' ";
+        $result = mysqli_query($db,$sql);
+        $sql = "SELECT * FROM locations WHERE id = '$location_id' AND name = '$name' AND lat = '$lat' AND lng = '$lng' AND description = '$description'";
+        $result = mysqli_query($db,$sql);
+        if($result->num_rows == 1){
+            $row = mysqli_fetch_array($result);
+            return true;
+        }
+        return false;
+    }
+}
 function dbUtil_addReview($user_id, $location_id, $star, $description){
     global $db;
     if(!dbUtil_connect()){
