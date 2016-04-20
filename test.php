@@ -23,5 +23,8 @@ print("dbUtil_getUserInfo(1) : " . dbUtil_getUserInfo(1) . "<br>");
 $insertResult = dbUtil_addLocation('locA',3.14,5.14,'descA');
 print("dbUtil_addLocation('locA',3.14,5.14,'descA') : " . $insertResult . "<br>");
 print("dbUtil_deleteLocation($insertResult) : " . dbUtil_deleteLocation($insertResult) . "<br>");
+$insertResult = dbUtil_addLocation(1,1,5.14,'descA');
+print("dbUtil_addReview(1,1,5.14,'descA') : " . $insertResult . "<br>");
+print("dbUtil_deleteReview($insertResult) : " . dbUtil_deleteReview($insertResult) . "<br>");
 
 ?>

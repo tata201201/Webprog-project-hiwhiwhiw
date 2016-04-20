@@ -144,7 +144,7 @@ function dbUtil_addLocation($name, $lat, $lng, $description){
     }else{
         $sql = "INSERT INTO locations (name, lat, lng, description) VALUES ('$name','$lat','$lng','$description') ";
         $result = mysqli_query($db,$sql);
-        $sql = "SELECT * FROM locations WHERE name = '$name' AND lat = '$lat' AND lng = '$lng' ";
+        $sql = "SELECT * FROM locations WHERE name = '$name' AND lat = '$lat' AND lng = '$lng' AND description = '$description'";
         $result = mysqli_query($db,$sql);
         if($result->num_rows == 1){
             $row = mysqli_fetch_array($result);
@@ -161,6 +161,37 @@ function dbUtil_deleteLocation($location_id){
         $sql = "DELETE FROM locations WHERE id = '$location_id' ";
         $result = mysqli_query($db,$sql);
         $sql = "SELECT * FROM locations WHERE id = '$location_id' ";
+        $result = mysqli_query($db,$sql);
+        if($result->num_rows == 0){
+            return true;
+        }
+        return false;
+    }
+}
+function dbUtil_addReview($user_id, $location_id, $star, $description){
+    global $db;
+    if(!dbUtil_connect()){
+        return false;
+    }else{
+        $sql = "INSERT INTO reviews (user_id, location_id, star, description) VALUES ('$user_id','$location_id','$star','$description') ";
+        $result = mysqli_query($db,$sql);
+        $sql = "SELECT * FROM reviews WHERE user_id = '$user_id' AND location_id = '$location_id' AND star = '$star' AND description = '$description'";
+        $result = mysqli_query($db,$sql);
+        if($result->num_rows == 1){
+            $row = mysqli_fetch_array($result);
+            return $row['id'];
+        }
+        return false;
+    }
+}
+function dbUtil_deleteReview($review_id){
+    global $db;
+    if(!dbUtil_connect()){
+        return false;
+    }else{
+        $sql = "DELETE FROM reviews WHERE id = '$review_id' ";
+        $result = mysqli_query($db,$sql);
+        $sql = "SELECT * FROM reviews WHERE id = '$review_id' ";
         $result = mysqli_query($db,$sql);
         if($result->num_rows == 0){
             return true;
