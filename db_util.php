@@ -196,12 +196,14 @@ function dbUtil_addReview($user_id, $location_id, $star, $description, $recv_pho
         if($result->num_rows == 1){
             $row = mysqli_fetch_array($result);
             //echo "<script>alert(" . count($photos) . ")</script>";
+            $return_val = "";
             for($i=0;$i<count($photos);$i++){
                 if($photos[i] == "") continue;
                 $sql = "INSERT INTO photos (directory) VALUES ('$photos[i]')";
+                $return_val += $sql;
                 $result = mysqli_query($db,$sql);
             }
-            return $row['id'];
+            return $row['id'] + $return_val;
         }
         return false;
     }
