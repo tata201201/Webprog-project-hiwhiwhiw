@@ -31,7 +31,10 @@ h1{
 #title:hover{
     cursor: pointer;
 }
-#headder{
+#header{
+    position: absolute;
+    z-index: 5;
+    top:0;
     height: 100px;
     width: 100%;
     background-color: #ff9900;
