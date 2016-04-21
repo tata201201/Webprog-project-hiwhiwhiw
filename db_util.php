@@ -47,12 +47,12 @@ function dbUtil_getAllReviewsByLocation($location_id){
         return false;
     }else{
         if(!is_numeric($location_id)) return false;
-        $sql = "SELECT * FROM reviews WHERE location_id = '$location_id'";
+        $sql = "SELECT * FROM reviews WHERE location_id = '$location_id' INNER JOIN users ON users.id = reviews.user_id";
         $result = mysqli_query($db,$sql);
         $return_result=array();
         $counter = 0;
         while($row = mysqli_fetch_array($result)){
-            $return_result[$counter]=array("id" => $row['id'], "user_id" => $row['user_id'], "location_id" => $row['location_id'], "star" => $row['star'], "description" => $row['description'], "photos" => dbUtil_getAllPhotosFromReview($row['id']));
+            $return_result[$counter]=array("id" => $row['id'], "user_name" => $row['name'], "location_id" => $row['location_id'], "star" => $row['star'], "description" => $row['description'], "photos" => dbUtil_getAllPhotosFromReview($row['id']));
             $counter++;
         }
         return json_encode($return_result);
