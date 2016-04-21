@@ -50,6 +50,10 @@ if(isset($_GET)){
             if(isset($_REQUEST['review_id'])){
                 print dbUtil_deleteReview($_REQUEST['review_id']);
             }
+        }else if($cmd == "edit_review"){
+            if(isset($_REQUEST['review_id'], $_REQUEST['user_id']) && isset($_REQUEST['location_id']) && isset($_REQUEST['star']) && isset($_REQUEST['description'])){
+                print dbUtil_editReview($_REQUEST['review_id'],$_REQUEST['user_id'], $_REQUEST['location_id'], $_REQUEST['star'], $_REQUEST['description']);
+            }
         }else if($cmd == "get_location_by_id"){
             if(isset($_REQUEST['location_id'])){
                 print dbUtil_getLocationByID($_REQUEST['location_id']);
