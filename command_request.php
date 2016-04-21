@@ -43,8 +43,8 @@ if(isset($_GET)){
                 print dbUtil_editLocation($_REQUEST['location_id'], $_REQUEST['name'], $_REQUEST['lat'], $_REQUEST['lng'], $_REQUEST['description']);
             }
         }else if($cmd == "add_review"){
-            if(isset($_REQUEST['user_id']) && isset($_REQUEST['location_id']) && isset($_REQUEST['star']) && isset($_REQUEST['description']) && isset($_REQUEST['photos'])){
-                print dbUtil_addReview($_REQUEST['user_id'], $_REQUEST['location_id'], $_REQUEST['star'], $_REQUEST['description'],$_REQUEST['photos']);
+            if(isset($_REQUEST['user_id']) && isset($_REQUEST['location_id']) && isset($_REQUEST['star']) && isset($_REQUEST['description']) /* && isset($_REQUEST['photos'])*/){
+                print dbUtil_addReview($_REQUEST['user_id'], $_REQUEST['location_id'], $_REQUEST['star'], $_REQUEST['description'] /*,$_REQUEST['photos']*/);
             }
         }else if($cmd == "delete_review"){
             if(isset($_REQUEST['review_id'])){
