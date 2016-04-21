@@ -17,6 +17,7 @@ $(document).ready(function()
 			console.log($("#review-photo-"+i).val());
 			photo.push($("#review-photo-"+i).val());
 		}
+		console.log(photo);
 		$.ajax
 		({
 			url: "../command_request.php?command=add_review",
@@ -26,8 +27,8 @@ $(document).ready(function()
 				'user_id': userid, 
 				'location_id': $("#location-id").val(), 
 				'star': $("#review-star").val(), 
-				'description': $("#review-des").val(),
-				'photos': photo
+				'description': $("#review-des").val()//,
+				//'photos': photo
 			},
 			dataType: "json"
 		}).done(function(data) {
