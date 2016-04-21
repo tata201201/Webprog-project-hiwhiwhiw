@@ -1,3 +1,5 @@
+var p_id = 1;
+var photo = [];
 $(document).ready(function()
 {
 	console.log("add review load");
@@ -11,6 +13,10 @@ $(document).ready(function()
 		console.log(userid);
 		console.log($("#location-id").val());
 		console.log(this.id);
+		for(var i = 1; i <= p_id; i++) {
+			console.log($("#review-photo-"+i).val());
+			photo.push($("#review-photo-"+i).val());
+		}
 		$.ajax
 		({
 			url: "../command_request.php?command=add_review",
@@ -20,7 +26,8 @@ $(document).ready(function()
 				'user_id': userid, 
 				'location_id': $("#location-id").val(), 
 				'star': $("#review-star").val(), 
-				'description': $("#review-des").val()
+				'description': $("#review-des").val(),
+				'photo': photo
 			},
 			dataType: "json"
 		}).done(function(data) {
@@ -35,6 +42,14 @@ $(document).ready(function()
 		}).fail(function() {
 			console.log("fail add review");
 		});
+	});
+	$(".add-photo-button").click(function() {
+		p_id++;
+		$(".photo-input").append('<div class="textfield">'+
+			'<input class="add-photo-review-input input" type="text" id="review-photo-'+ p_id +'" name="review-photo" required>'+
+			'<label for="review-lng">Photo'+"'"+'s URL</label>'+
+			'</div>'
+		);
 	});
 });
 
