@@ -183,7 +183,7 @@ function dbUtil_editLocation($location_id, $name, $lat, $lng, $description){
         return false;
     }
 }
-function dbUtil_addReview($user_id, $location_id, $star, $description){
+function dbUtil_addReview($user_id, $location_id, $star, $description, $photos){
     global $db;
     if(!dbUtil_connect()){
         return false;
@@ -194,6 +194,11 @@ function dbUtil_addReview($user_id, $location_id, $star, $description){
         $result = mysqli_query($db,$sql);
         if($result->num_rows == 1){
             $row = mysqli_fetch_array($result);
+            for($i=0;$i<count($photos);$i++){
+                if($photos[i] == "") continue;
+                $sql = "INSERT INTO photos (directory) VALUES ('$photos[i]')";
+                $result = mysqli_query($db,$sql);
+            }
             return $row['id'];
         }
         return false;
