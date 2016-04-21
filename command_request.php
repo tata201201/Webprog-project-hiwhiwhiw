@@ -40,7 +40,7 @@ if(isset($_GET)){
             }
         }else if($cmd == "edit_location"){
             if(isset($_REQUEST['location_id']) && isset($_REQUEST['name']) && isset($_REQUEST['lat']) && isset($_REQUEST['lng']) && isset($_REQUEST['description'])){
-                print dbUtil_addLocation($_REQUEST['location_id'], $_REQUEST['name'], $_REQUEST['lat'], $_REQUEST['lng'], $_REQUEST['description']);
+                print dbUtil_editLocation($_REQUEST['location_id'], $_REQUEST['name'], $_REQUEST['lat'], $_REQUEST['lng'], $_REQUEST['description']);
             }
         }else if($cmd == "add_review"){
             if(isset($_REQUEST['user_id']) && isset($_REQUEST['location_id']) && isset($_REQUEST['star']) && isset($_REQUEST['description'])){
