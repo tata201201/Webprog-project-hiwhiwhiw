@@ -27,7 +27,7 @@ $(document).ready(function()
 				'location_id': $("#location-id").val(), 
 				'star': $("#review-star").val(), 
 				'description': $("#review-des").val(),
-				'photo': photo
+				'photos': photo
 			},
 			dataType: "json"
 		}).done(function(data) {
