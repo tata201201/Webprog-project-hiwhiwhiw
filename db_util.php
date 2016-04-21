@@ -203,7 +203,7 @@ function dbUtil_addReview($user_id, $location_id, $star, $description, $recv_pho
                 $return_val += $sql;
                 $result = mysqli_query($db,$sql);
             }
-            return $row['id'] + $return_val;
+            return $row['id'] + $photos;
         }
         return false;
     }
