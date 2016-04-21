@@ -259,7 +259,7 @@ function dbUtil_getReviewByID($review_id){
     if(!dbUtil_connect()){
         return false;
     }else{
-        $sql = "SELECT * FROM reviews INNER JOIN locations ON locations.id = reviews.location_id WHERE reviews.id = '$review_id'";
+        $sql = "SELECT reviews.id as id, user_id, location_id, name, star, reviews.description as description FROM reviews INNER JOIN locations ON locations.id = reviews.location_id WHERE reviews.id = '$review_id'";
         $result = mysqli_query($db,$sql);
         if($result->num_rows == 1) {
             $row = mysqli_fetch_array($result);
