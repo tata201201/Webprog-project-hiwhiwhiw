@@ -201,7 +201,7 @@ function dbUtil_addReview($user_id, $location_id, $star, $description, $recv_pho
                 if($photos[$i] == "") continue;
                 $sql = "INSERT INTO photos (directory) VALUES ('$photos[$i]')";
                 //$return_val += $sql;
-                $result = mysqli_query($db,$sql);
+                $result2 = mysqli_query($db,$sql);
             }
             return $row['id'];
         }
