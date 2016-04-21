@@ -245,4 +245,20 @@ function dbUtil_getLocationByID($location_id){
         }
     }
 }
+function dbUtil_getReviewByID($review_id){
+    global $db;
+    if(!dbUtil_connect()){
+        return false;
+    }else{
+        $sql = "SELECT * FROM reviews WHERE id = '$review_id'";
+        $result = mysqli_query($db,$sql);
+        if($result->num_rows == 1) {
+            $row = mysqli_fetch_array($result);
+            $return_result = array("id" => $row['id'], "user_id" => $row['user_id'], "location_id" => $row['location_id'], "star" => $row['star'], "description" => $row['description'], "photos" => dbUtil_getAllPhotosFromReview($row['id']));
+            return json_encode($return_result);
+        }else{
+            return false;
+        }
+    }
+}
 ?>
