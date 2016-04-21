@@ -3,6 +3,10 @@ html, body{
     margin: 0;
     padding: 0;
 }
+h1{
+    font-size: 1.5em;
+    font-weight: bold;
+}
 #map{
     height: 100%;
 }
@@ -37,6 +41,7 @@ html, body{
 }
 #location_name{
     font-size: 3em;
+    font-weight: bold;
 }
 #review_star,#review_description{
     padding-left: 20px;

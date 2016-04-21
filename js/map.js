@@ -80,13 +80,14 @@ function display_review_pane(location, reviews){
   var show_reviews="";
 
   show_location = show_location+"<div id='location_name'>"+location.name+"</div>";
-  show_location = show_location+"<div id='location_description'>"+location.description+"</div>";
+  show_location = show_location+"<div id='location_latlng'>"+"Lat:"+location.lat+" Lng:"+location.lng+"</div>";
+  show_location = show_location+"<div id='location_description'>"+"<h1>Description:</h1>"+location.description+"</div>";
   $(show_location).appendTo("#location");
 
 
   for(var i = 0;i<reviews.length;i++){
-    show_reviews = show_reviews+"<div id='review_user'> Review by "+reviews[i].user_name+"</div>";
-    show_reviews = show_reviews+"<div id='review_star'> Star"+"<div class='progress'>"+
+    show_reviews = show_reviews+"<h1>Review:</h1><div id='review_user'> <b>By: "+reviews[i].user_name+"</b></div>";
+    show_reviews = show_reviews+"<div id='review_star'> Star:"+"<div class='progress'>"+
     "<div class='progress-bar' role='progressbar' aria-valuenow='3' aria-valuemin='0' aria-valuemax='5' style='width:"+(reviews[i].star*20)+"%'>"+
     "</div></div></div>";
     show_reviews = show_reviews+"<div id='review_description'> Review: <br>"+reviews[i].description+"</div>";
