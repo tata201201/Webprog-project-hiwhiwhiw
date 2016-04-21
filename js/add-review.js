@@ -17,6 +17,7 @@ $(document).ready(function()
 			console.log($("#review-photo-"+i).val());
 			photo.push($("#review-photo-"+i).val());
 		}
+		photo = JSON.parse(photo);
 		$.ajax
 		({
 			url: "../command_request.php?command=add_review",
