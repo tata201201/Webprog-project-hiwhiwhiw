@@ -192,7 +192,7 @@ function dbUtil_addReview($user_id, $location_id, $star, $description, $recv_pho
         $result = mysqli_query($db,$sql);
         $sql = "SELECT * FROM reviews WHERE user_id = '$user_id' AND location_id = '$location_id' AND star = '$star' AND description = '$description'";
         $result = mysqli_query($db,$sql);
-        $photos = $recv_photo;
+        $photos = json_decode($recv_photo);
         if($result->num_rows == 1){
             $row = mysqli_fetch_array($result);
             //echo "<script>alert(" . count($photos) . ")</script>";
