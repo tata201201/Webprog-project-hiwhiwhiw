@@ -4,8 +4,8 @@ var username;
 var userid;
 $(document).ready(function()
 {
-	$("input").keypress(function(event){
-	    if(event.keyCode == 13){
+	$("input.login-input").keypress(function(event){
+	    if(event.keyCode == 13) {
         	event.preventDefault();
 	    	console.log("enter");
 	    	login();
@@ -27,8 +27,9 @@ $(document).ready(function()
     		$("#profile-username").css("color", usercolor);
     	});
 		tabstate = 1;
+				console.log("state= " + tabstate);
 		$(".tab-1").addClass("selected");
-		$.getScript("../js/login.js");
+		$.getScript("../js/profile.js");
 	});
 	$("#locations-tab").click(function() {
 		if(tabstate == 1) {
@@ -42,8 +43,9 @@ $(document).ready(function()
     		
     	});
 		tabstate = 2;
+				console.log("state= " + tabstate);
 		$(".tab-2").addClass("selected");
-		$.getScript("../js/login.js");
+		$.getScript("../js/locations.js");
 	});
 	$("#reviews-tab").click(function() {
 		if(tabstate == 1) {
@@ -58,8 +60,9 @@ $(document).ready(function()
     		
     	});
 		tabstate = 3;
+				console.log("state= " + tabstate);
 		$(".tab-3").addClass("selected");
-		$.getScript("../js/login.js");
+		$.getScript("../js/reviews.js");
 	});
 
 	//change password
@@ -131,7 +134,7 @@ function login() {
 		    	$(".login").load("../admin/profile.html", function() {
 		    		$("#profile-username").text(username);
 		    		$("#profile-username").css("color", usercolor);
-		    		$.getScript("../js/login.js");
+		    		$.getScript("../js/profile.js");
 		    	});
 		    	$(".disabled").addClass("is-active");
 		    	$(".disabled").removeClass("disabled");
