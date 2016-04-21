@@ -47,7 +47,7 @@ function dbUtil_getAllReviewsByLocation($location_id){
         return false;
     }else{
         if(!is_numeric($location_id)) return false;
-        $sql = "SELECT * FROM reviews WHERE location_id = '$location_id' INNER JOIN users ON users.id = reviews.user_id";
+        $sql = "SELECT * FROM reviews INNER JOIN users ON users.id = reviews.user_id WHERE location_id = '$location_id' ";
         $result = mysqli_query($db,$sql);
         $return_result=array();
         $counter = 0;
