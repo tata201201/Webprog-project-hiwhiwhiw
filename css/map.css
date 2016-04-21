@@ -1,31 +1,4 @@
-html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-}
-
-#headder{
-	height: 100px;
-	width: 100%;
-	background-color: #ff9900;
-}
-
-#map {
-	position: relative;
-	/*margin-top: 175px;*/
-    height: 100%;
-}
-
-.logo{
-	width: 100px;
-	height: 100px;
-	position: absolute;
-	display: inline;
-}
-
-#logo1{
-	background-color: #ffffff;
-}#review{
+#review{
     position: absolute;
     z-index: 5;
     top:0;

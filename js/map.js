@@ -49,6 +49,8 @@ function display(result, map){
       map.setCenter(this.getPosition());
       display_review(this.value);
       $('#review').css("right","0px");
+      $("#review_details").empty();
+      $("#review_details").html("<div style='text-align:center;'><img src='site_image/loading.gif'/><br/><br/>Loading...</div>");
     });
     //addMarkerWithTimeout({lat:result[i].lat, lng:result[i].lng}, i * 200);
   }
@@ -72,6 +74,8 @@ function display_review(location){
 function display_review_pane(location, reviews){
   console.log(location);
   console.log(reviews);
+  $("#review_details").empty();
+  $("#review_details").html(location.id);
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
