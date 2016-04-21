@@ -34,5 +34,6 @@ print("dbUtil_editReview($insertResult,1,1,9.14,'descAA') : " . dbUtil_editRevie
 print("dbUtil_getAllReviewsByLocation(1) : " . dbUtil_getAllReviewsByLocation(1) . "<br>");
 print("dbUtil_deleteReview($insertResult) : " . dbUtil_deleteReview($insertResult) . "<br>");
 print("dbUtil_getAllReviewsByLocation(1) : " . dbUtil_getAllReviewsByLocation(1) . "<br>");
+print("dbUtil_getLocationByID(1) : " . dbUtil_getLocationByID(1) . "<br>");
 
 ?>

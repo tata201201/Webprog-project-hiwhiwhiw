@@ -229,4 +229,20 @@ function dbUtil_editReview($review_id, $user_id, $location_id, $star, $descripti
         return false;
     }
 }
+function dbUtil_getLocationByID($location_id){
+    global $db;
+    if(!dbUtil_connect()){
+        return false;
+    }else{
+        $sql = "SELECT * FROM locations WHERE id = '$location_id'";
+        $result = mysqli_query($db,$sql);
+        if($result->num_rows == 1) {
+            $row = mysqli_fetch_array($result);
+            $return_result = array("id" => $row['id'], "name" => $row['name'], "description" => $row['description'], "lat" => $row['lat'], "lng" => $row['lng']);
+            return json_encode($return_result);
+        }else{
+            return false;
+        }
+    }
+}
 ?>
