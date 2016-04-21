@@ -20,7 +20,7 @@ h1{
     right:-400px;
     background-color: rgba(255,255,255,0.8);
     transition: right 0.5s;
-    overflow: hidden;
+    overflow: auto;
 }
 #title{
     width: 100%;
@@ -31,7 +31,10 @@ h1{
 #title:hover{
     cursor: pointer;
 }
-#headder{
+#header{
+    position: absolute;
+    z-index: 5;
+    top:0;
     height: 100px;
     width: 100%;
     background-color: #ff9900;
