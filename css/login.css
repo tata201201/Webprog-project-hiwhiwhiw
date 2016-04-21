@@ -76,7 +76,7 @@ h3 {
 .disabled > a {
 	color: rgba(255, 255, 255, .6);
 }
-a:hover {
+a, a:hover, a:active, a:visited {
 	text-decoration: none;
 }
 .content {
@@ -214,11 +214,11 @@ button.red, input.red{
 	color: red;
 }
 
-.add-location-button {
+.add-location-button, .add-review-button {
 	position: absolute;
 	top: 30px;
 }
-.delete-location-button {
+.delete-location-button, .delete-review-button, .edit-location-button {
 	margin-left: 1vw;
 }
 .middle-button-div {

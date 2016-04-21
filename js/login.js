@@ -40,12 +40,11 @@ $(document).ready(function()
 			$(".tab-3").removeClass("selected");
 		}
 		$(".login").load("../admin/locations.html", function() {
-    		
+			$.getScript("../js/locations.js");	
     	});
 		tabstate = 2;
-				console.log("state= " + tabstate);
+		console.log("state= " + tabstate);
 		$(".tab-2").addClass("selected");
-		$.getScript("../js/locations.js");
 	});
 	$("#reviews-tab").click(function() {
 		if(tabstate == 1) {
@@ -57,12 +56,11 @@ $(document).ready(function()
 			$(".tab-2").removeClass("selected");
 		}
 		$(".login").load("../admin/reviews.html", function() {
-    		
+			$.getScript("../js/reviews.js");		
     	});
 		tabstate = 3;
-				console.log("state= " + tabstate);
+		console.log("state= " + tabstate);
 		$(".tab-3").addClass("selected");
-		$.getScript("../js/reviews.js");
 	});
 
 	//change password

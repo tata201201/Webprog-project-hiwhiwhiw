@@ -1,0 +1,38 @@
+<div class="editreviewsfield">
+	<div class="table-header">
+		<div>
+			<h1 id="review">Reviews</h1>
+		</div>
+	</div>	
+	<input class="edit-review-input input" type="hidden" id="review-id" name="review-id" required>
+	<div class="editreview">
+		<div>
+			<h4 class="under-review-header">Edit Review</h4>
+		</div>
+		<div class="col-xs-3">
+			<p id="location_id"></p>
+			<h5 id="location_name"></h5>
+		</div>
+		<div>
+			<form class="go-up col-xs-6" method="post" action="#">
+			  	<div>
+					  <div class="textfield">
+					    <input class="edit-review-input input" type="text" id="review-star" name="review-star" required>
+					    <label for="review-lng">Review's star</label>
+					  </div>
+			  	</div>
+			  	<div>
+					  <div class="textfield">
+					    <input class="edit-review-input input" type="text" id="review-des" name="review-des" required>
+					    <label for="review-des">Review's description</label>
+					  </div>
+			  	</div>
+			  	<div class="middle-button-div">
+					<input type="button" name="cancel-edit-review" id="cancel-edit-review" value="Cancel" class="cancel-edit-review-button input-button red">
+					<input type="button" name="confirm-edit-review" id="confirm-edit-review" value="Save" class="confirm-edit-review-button input-button blue">
+				</div>
+			</form>
+		</div>
+		
+	</div>
+</div>

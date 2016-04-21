@@ -1,6 +1,14 @@
 $(document).ready(function()
 {
 	console.log("locations-console load");
+	$(".add-review-location-button").click(function() {
+		var lo_id = this.id;
+		$(".reviewsfield").remove();
+		$(".login").load("../admin/add-review.html", function() {
+			$("#location-id").val(lo_id);
+			$.getScript("../js/add-review.js");
+    	});
+	});
 	$(".edit-location-button").click(function() {
 		$.ajax
 		({

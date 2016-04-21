@@ -5,7 +5,6 @@ $(document).ready(function()
 		$(".login").load("../admin/add-location.html", function() {
 			$.getScript("../js/add-location.js");
     	});
-
 	});
 	$.ajax
 	({
@@ -27,8 +26,9 @@ $(document).ready(function()
 					+'</td><td id="lng-"'+ id +'>'+lng
 					+'</td><td id="des-"'+ id +'>'+description
 					+'</td><td class="row-console">'
-					+'<input type="button" name="edit" id="'+ id +'" value="edit" class="edit-location-button blue btn btn-xs">'
-					+'<input type="button" name="delete" id="'+ id +'" value="delete" class="delete-location-button red btn btn-xs">'
+					+'<input type="button" name="addreview" id="'+ id +'" value="Add Review" class="add-review-location-button btn btn-success btn-xs">'
+					+'<input type="button" name="edit" id="'+ id +'" value="Edit" class="edit-location-button blue btn btn-xs">'
+					+'<input type="button" name="delete" id="'+ id +'" value="Delete" class="delete-location-button red btn btn-xs">'
 					+'</td></tr>'
 				);
 			}
