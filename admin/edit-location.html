@@ -1,42 +1,45 @@
 <div class="editlocationsfield">
-	<div class="table-header">
-		<div>
-			<h1 id="location">Locations</h1>
+	<div class="col-xs-3"></div>
+	<div class="col-xs-6">
+		<div class="table-header">
+			<div>
+				<h1 id="location">Locations</h1>
+			</div>
+		</div>	
+		<div class="editlocation">
+			<h4 class="under-location-header">Edit Location</h4>
+			<div class="margin-left col-xs-2"></div>
+			<form class="go-up col-xs-8" method="post" action="#"><div>
+				<input class="edit-location-input input" type="hidden" id="location-id" name="location-id" required>
+			  	<div>
+					  <div class="textfield">
+					    <input class="edit-location-input input" type="text" id="location-name" name="location-name" required>
+					    <label for="location-name">Location's name</label>
+					  </div>
+			  	</div>
+			  	<div>
+					  <div class="textfield">
+					    <input class="edit-location-input input" type="text" id="location-lat" name="location-lat" required>
+					    <label for="location-lat">Location's latitude</label>
+					  </div>
+			  	</div>
+			  	<div>
+					  <div class="textfield">
+					    <input class="edit-location-input input" type="text" id="location-lng" name="location-lng" required>
+					    <label for="location-lng">Location's longitude</label>
+					  </div>
+			  	</div>
+			  	<div>
+					  <div class="textfield">
+						<textarea class="edit-location-input input" type="text" id="location-des" name="location-des"cols="40" rows="5" required></textarea> 
+					    <label for="location-des">Location's description</label>
+					  </div>
+			  	</div>
+			  	<div class="middle-button-div">
+					<input type="button" name="cancel-edit-location" id="cancel-edit-location" value="Cancel" class="cancel-edit-location-button input-button red">
+					<input type="button" name="confirm-edit-location" id="confirm-edit-location" value="Save" class="confirm-edit-location-button input-button blue">
+				</div>
+			</form>
 		</div>
 	</div>	
-	<div class="addlocation">
-		<h4 class="under-location-header">Edit Location</h4>
-		<div class="margin-left col-xs-2"></div>
-		<form class="go-up col-xs-8" method="post" action="#"><div>
-		<input class="add-location-input input" type="hidden" id="location-id" name="location-id" required>
-		  	<div>
-				  <div class="textfield">
-				    <input class="add-location-input input" type="text" id="location-name" name="location-name" required>
-				    <label for="location-name">Location's name</label>
-				  </div>
-		  	</div>
-		  	<div>
-				  <div class="textfield">
-				    <input class="add-location-input input" type="text" id="location-lat" name="location-lat" required>
-				    <label for="location-lat">Location's latitude</label>
-				  </div>
-		  	</div>
-		  	<div>
-				  <div class="textfield">
-				    <input class="add-location-input input" type="text" id="location-lng" name="location-lng" required>
-				    <label for="location-lng">Location's longitude</label>
-				  </div>
-		  	</div>
-		  	<div>
-				  <div class="textfield">
-				    <input class="add-location-input input" type="text" id="location-des" name="location-des" required>
-				    <label for="location-des">Location's description</label>
-				  </div>
-		  	</div>
-		  	<div class="middle-button-div">
-				<input type="button" name="cancel-edit-location" id="cancel-edit-location" value="Cancel" class="cancel-edit-location-button input-button red">
-				<input type="button" name="confirm-edit-location" id="confirm-edit-location" value="Save" class="confirm-edit-location-button input-button blue">
-			</div>
-		</form>
-	</div>
 </div>
