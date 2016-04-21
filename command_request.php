@@ -54,6 +54,10 @@ if(isset($_GET)){
             if(isset($_REQUEST['location_id'])){
                 print dbUtil_getLocationByID($_REQUEST['location_id']);
             }
+        }else if($cmd == "get_review_by_id"){
+            if(isset($_REQUEST['review_id'])){
+                print dbUtil_getReviewByID($_REQUEST['review_id']);
+            }
         }
     }
 }
@@ -72,5 +76,6 @@ add_review | POST ( user_id , location_id , star , description ) | RETURN ID (do
 delete_review | POST ( review_id ) | RETURN TRUE (done) or FALSE (fail)
 edit_review | POST ( review_id , user_id , location_id , star , description ) | RETURN TRUE (done) or FALSE (fail)
 get_location_by_id | POST ( location_id ) | RETURN JSON (done) or FALSE (fail)
+get_review_by_id | POST ( review_id ) | RETURN JSON (done) or FALSE (fail)
  */
 ?>

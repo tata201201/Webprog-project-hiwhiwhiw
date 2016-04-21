@@ -35,5 +35,6 @@ print("dbUtil_getAllReviewsByLocation(1) : " . dbUtil_getAllReviewsByLocation(1)
 print("dbUtil_deleteReview($insertResult) : " . dbUtil_deleteReview($insertResult) . "<br>");
 print("dbUtil_getAllReviewsByLocation(1) : " . dbUtil_getAllReviewsByLocation(1) . "<br>");
 print("dbUtil_getLocationByID(1) : " . dbUtil_getLocationByID(1) . "<br>");
+print("dbUtil_getReviewByID(1) : " . dbUtil_getReviewByID(1) . "<br>");
 
 ?>
