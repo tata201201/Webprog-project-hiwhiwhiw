@@ -109,7 +109,7 @@ a:hover {
 	margin: 0;
 	padding: 20px 0
 }
-.input {
+.login-input, .input {
 	border: none;
 	border-bottom: 1px solid rgba(0, 0, 0, .12);
 	display: block;
@@ -189,11 +189,11 @@ button, .input-button {
 .login-input-button-div > .input-button {
 	margin-top: 2vw;
 }
-button.blue, .input-button.blue {
+button.blue, input.blue {
 	background: rgb(63,81,181);
 	color: rgb(255,255,255);
 }
-button.red, .input-button.red{
+button.red, input.red{
     color: rgb(255,255,255);
     background-color: rgb(255,64,129);
 }
@@ -212,4 +212,15 @@ button.red, .input-button.red{
 }
 .error, .colorerror {
 	color: red;
+}
+
+.add-location-button {
+	position: absolute;
+	top: 30px;
+}
+.delete-location-button {
+	margin-left: 1vw;
+}
+.middle-button-div {
+	text-align: center;
 }
