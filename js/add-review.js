@@ -32,6 +32,7 @@ $(document).ready(function()
 			},
 			dataType: "json"
 		}).done(function(data) {
+			console.log(data);
 			$(".addlocationsfield").remove();
 			$(".login").load("../admin/reviews.html", function() {
 				$.getScript("../js/reviews.js");
