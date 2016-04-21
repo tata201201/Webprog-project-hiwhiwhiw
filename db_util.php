@@ -194,7 +194,7 @@ function dbUtil_addReview($user_id, $location_id, $star, $description, $photos){
         $result = mysqli_query($db,$sql);
         if($result->num_rows == 1){
             $row = mysqli_fetch_array($result);
-            echo "<script>alert(" . count($photos) . ")</script>";
+            //echo "<script>alert(" . count($photos) . ")</script>";
             for($i=0;$i<count($photos);$i++){
                 if($photos[i] == "") continue;
                 $sql = "INSERT INTO photos (directory) VALUES ('$photos[i]')";
