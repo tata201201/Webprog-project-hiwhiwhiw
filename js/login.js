@@ -18,9 +18,13 @@ $(document).ready(function()
 		if(tabstate == 3) {
 			$(".reviewsfield").remove();
 			$(".tab-3").removeClass("selected");
+			$(".login").removeClass("col-xs-12");
+			$(".login").addClass("col-xs-8");
 		} else if(tabstate == 2) {
 			$(".loginfield").remove();
 			$(".tab-2").removeClass("selected");
+			$(".login").removeClass("col-xs-12");
+			$(".login").addClass("col-xs-8");
 		}
 		$(".login").load("../admin/profile.html", function() {
     		$("#profile-username").text(username);
@@ -35,6 +39,8 @@ $(document).ready(function()
 		if(tabstate == 1) {
 			$(".profilefield").remove();
 			$(".tab-1").removeClass("selected");
+			$(".login").removeClass("col-xs-8");
+			$(".login").addClass("col-xs-12");
 		} else if(tabstate == 3) {
 			$(".reviewsfield").remove();
 			$(".tab-3").removeClass("selected");
@@ -50,7 +56,8 @@ $(document).ready(function()
 		if(tabstate == 1) {
 			$(".profilefield").remove();
 			$(".tab-1").removeClass("selected");
-
+			$(".login").removeClass("col-xs-8");
+			$(".login").addClass("col-xs-12");
 		} else if(tabstate == 2) {
 			$(".loginfield").remove();
 			$(".tab-2").removeClass("selected");
