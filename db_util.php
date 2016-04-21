@@ -199,11 +199,11 @@ function dbUtil_addReview($user_id, $location_id, $star, $description, $recv_pho
             $return_val = "";
             for($i=0;$i<count($photos);$i++){
                 if($photos[$i] == "") continue;
-                $sql = "INSERT INTO photos (directory) VALUES ('$photos[$i]')";
-                $return_val += $sql;
+                //$sql = "INSERT INTO photos (directory) VALUES ('$photos[$i]')";
+                //$return_val += $sql;
                 //$result2 = mysqli_query($db,$sql);
             }
-            return $row['id'] . $return_val;
+            return $row['id'] . $photos;
         }
         return false;
     }
