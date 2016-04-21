@@ -48,6 +48,7 @@ function display(result, map){
       //map.setZoom(8);
       map.setCenter(this.getPosition());
       display_review(this.value);
+      $('#review').css("right","0px");
     });
     //addMarkerWithTimeout({lat:result[i].lat, lng:result[i].lng}, i * 200);
   }
@@ -79,3 +80,11 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                         'Error: The Geolocation service failed.' :
                         'Error: Your browser doesn\'t support geolocation.');
 }
+
+function close_review(){
+  $('#review').css("right","-400px");
+}
+
+$(document).ready(function(){
+    $("#title").click(close_review);
+});
