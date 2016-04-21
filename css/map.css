@@ -20,6 +20,7 @@ h1{
     right:-400px;
     background-color: rgba(255,255,255,0.8);
     transition: right 0.5s;
+    overflow: auto;
 }
 #title{
     width: 100%;
