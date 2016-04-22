@@ -1,0 +1,54 @@
+<div class="addreviewsfield">
+	<div class="col-xs-2"></div>
+	<div class="col-xs-8">
+		<div class="table-header">
+			<div>
+				<h1 id="review">Reviews</h1>
+			</div>
+		</div>	
+		<input class="add-review-input input" type="hidden" id="location-id" name="location-id" required>
+		<div class="addreview">
+			<div>
+				<h4 class="under-review-header">Add Review</h4>
+			</div>
+			<div class="col-xs-3">
+				<p id="location_id"></p>
+				<h5 id="location_name"></h5>
+			</div>
+			<div>
+				<form class="go-up col-xs-6" method="post" action="#">
+				  	<div>
+						  <div class="textfield">
+						    <input class="add-review-input input" type="text" id="review-star" name="review-star" required>
+						    <label for="review-lng">Review's star</label>
+						  </div>
+				  	</div>
+				  	<div>
+						  <div class="textfield">
+						    <textarea class="add-review-input input" type="text" id="review-des" name="review-des" cols="40" rows="5" required></textarea> 
+						    <label for="review-des">Review's description</label>
+						  </div>
+				  	</div>
+				  	<div class="middle-button-div">
+						<input type="button" name="cancel-add-review" id="cancel-add-review" value="Cancel" class="cancel-add-review-button input-button red">
+						<input type="button" name="confirm-add-review" id="confirm-add-review" value="Save" class="confirm-add-review-button input-button blue">
+					</div>
+				</form>
+	<!-- 			<form class="go-up col-xs-6" method="post" action="#">
+				  	<div class="photo-input">
+						  <div class="textfield">
+						    <input class="add-photo-review-input input" type="text" id="review-photo-1" name="review-photo" required>
+						    <label for="review-lng">Photo's URL</label>
+						  </div>
+				  	</div>
+				  	<div class="col-xs-7"></div>
+				  	<div class="left-button-div col-xs-5">
+						<input type="button" name="add-photo" id="add-photo" value="+" class="add-photo-button btn btn-success">
+					</div>
+				</form> -->
+			</div>
+			
+		</div>
+	</div>
+	
+</div>

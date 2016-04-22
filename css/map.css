@@ -1,0 +1,58 @@
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+h1{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+#map{
+    height: 100%;
+}
+.logo{
+    display: inline-block;
+}
+.logo>img{
+    width: 100px;
+    height: 100px;
+}
+#review{
+    position: absolute;
+    z-index: 5;
+    top:0;
+    bottom:0;
+    width:400px;
+    right:-400px;
+    background-color: rgba(255,255,255,0.8);
+    transition: right 0.5s;
+    overflow: auto;
+}
+#title{
+    width: 100%;
+    background-color: #ff9900;
+    text-align: center;
+    padding: 5px;
+}
+#title:hover{
+    cursor: pointer;
+}
+#header{
+    position: absolute;
+    z-index: 5;
+    top:0;
+    height: 100px;
+    width: 100%;
+    background-color: #ff9900;
+}
+#location,#review_details{
+    padding: 10px;
+}
+#location_name{
+    font-size: 3em;
+    font-weight: bold;
+}
+#review_star,#review_description{
+    padding-left: 20px;
+    padding-right: 20px;
+}
